@@ -11,8 +11,10 @@ export default async ({ req, res, log, error }) => {
      .setKey(process.env.APPWRITE_API_KEY);
 
   const database = new Databases(client);
-  
-  await database.createDocument('65532fcadc03be880396', '65bca37ff23142ac5902', ID.unique(), {time: (+new Date()).toString()});
+
+for (let step = 0; step < 5; step++) {
+   await database.createDocument('65532fcadc03be880396', '65bca37ff23142ac5902', ID.unique(), {time: (+new Date()).toString()});
+}
 
    return res.json({'success': true});
 };

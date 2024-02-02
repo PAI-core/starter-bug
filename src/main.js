@@ -5,6 +5,7 @@ import { Client, Databases, ID } from 'node-appwrite';
 export default async ({ req, res, log, error }) => {
     // Why not try the Appwrite SDK?
     //
+    log(req);
     const client = new Client()
         .setEndpoint('https://cloud.appwrite.io/v1')
         .setProject('65bd36ce3026d6c695fb')

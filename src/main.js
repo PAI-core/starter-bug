@@ -17,8 +17,8 @@ export default async ({ req, res, log, error }) => {
         log('fetching branch');
         const branch = await this.databases.getDocument('65532fcadc03be880396', 'branches', '6592a5aacea01097e372');
         log('fetched branch');
-        return res.json({ success: true });
+        return res.json({ success: true, data: branch });
     } catch {
-        return res.json({ success: true });
+        return res.json({ success: false });
     }
 };

@@ -1,4 +1,4 @@
-import { Client, Databases } from 'node-appwrite';
+import { Client, Databases, ID } from 'node-appwrite';
 
 // This is your Appwrite function
 // It's executed each time we get a request
@@ -12,7 +12,7 @@ export default async ({ req, res, log, error }) => {
 
   const database = new Databases(client);
   
-  await database.createDocument('65532fcadc03be880396', '65bca37ff23142ac5902', sdk.ID.unique(), {time: (+new Date()).toString()});
+  await database.createDocument('65532fcadc03be880396', '65bca37ff23142ac5902', ID.unique(), {time: (+new Date()).toString()});
 
     res.json({'success': true});
 };

@@ -8,7 +8,7 @@ export default async ({ req, res, log, error }) => {
     log(req);
     const client = new Client()
         .setEndpoint('https://cloud.appwrite.io/v1')
-        .setProject('65bd36ce3026d6c695fb')
+        .setProject('65bd40b798ddf71d550d')
         .setKey(process.env.APPWRITE_API_KEY);
 
     const database = new Databases(client);

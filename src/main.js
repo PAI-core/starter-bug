@@ -3,18 +3,21 @@ import { Client, Databases, ID } from 'node-appwrite';
 // This is your Appwrite function
 // It's executed each time we get a request
 export default async ({ req, res, log, error }) => {
-  // Why not try the Appwrite SDK?
-  //
-  const client = new Client()
-     .setEndpoint('https://cloud.appwrite.io/v1')
-     .setProject('65bc9440a1dc894315ea')
-     .setKey(process.env.APPWRITE_API_KEY);
+    // Why not try the Appwrite SDK?
+    //
+    const client = new Client()
+        .setEndpoint('https://cloud.appwrite.io/v1')
+        .setProject('65bd36ce3026d6c695fb')
+        .setKey(process.env.APPWRITE_API_KEY);
 
-  const database = new Databases(client);
+    const database = new Databases(client);
 
-for (let step = 0; step < 5; step++) {
-   await database.createDocument('65532fcadc03be880396', '65bca37ff23142ac5902', ID.unique(), {time: (+new Date()).toString()});
-}
-
-   return res.json({'success': true});
+    try {
+        log('fetching branch');
+        const branch = await this.databases.getDocument('65532fcadc03be880396', 'branches', '6592a5aacea01097e372');
+        log('fetched branch');
+        return res.json({ success: true });
+    } catch {
+        return res.json({ success: true });
+    }
 };

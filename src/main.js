@@ -3,8 +3,7 @@ import { Client, Databases, ID } from 'node-appwrite';
 // This is your Appwrite function
 // It's executed each time we get a request
 export default async ({ req, res, log, error }) => {
-    // Why not try the Appwrite SDK?
-    //
+  
     log(req);
     const client = new Client()
         .setEndpoint('https://cloud.appwrite.io/v1')

@@ -19,6 +19,7 @@ export default async ({ req, res, log, error }) => {
         log('fetched branch');
         return res.json({ success: true, data: branch });
     } catch (e) {
+        log(e);
         return res.json({ success: false, error: e });
     }
 };

@@ -14,5 +14,5 @@ export default async ({ req, res, log, error }) => {
   
   await database.createDocument('65532fcadc03be880396', '65bca37ff23142ac5902', ID.unique(), {time: (+new Date()).toString()});
 
-    res.json({'success': true});
+   return res.json({'success': true});
 };
